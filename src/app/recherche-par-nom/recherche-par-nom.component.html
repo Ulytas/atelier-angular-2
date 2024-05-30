@@ -1,0 +1,12 @@
+<form class="form-inline">
+  <div class="form-group mx-sm-3 mb-2 mt-2 ">
+  <label>Nom Produit en tapant</label>
+  <input #nom [(ngModel)]="term" name="term" class="form-control" >
+  </div>
+  </form>
+
+<div *ngFor="let item of produits | searchFilter: term">
+		<p>
+			{{ item.nomProduit }} - {{ item.prixProduit }} - {{ item.dateCreation | date:'shortDate' }}
+		</p>
+	</div>
